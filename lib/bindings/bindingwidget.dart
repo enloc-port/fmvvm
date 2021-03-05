@@ -17,9 +17,7 @@ class BindingWidget<T extends BindableBase> extends StatefulWidget {
   /// This looks up the context for an ancestor that is a BindingWidget of the
   /// supplied type. If none are found, an [ArgumentError] is raised.
   static BindingWidget<T> of<T extends BindableBase>(BuildContext context) {
-    final type = Utilities.typeOf<BindingWidget<T>>();
-    final bindingWidget =
-        context.ancestorWidgetOfExactType(type) as BindingWidget<T>;
+    final bindingWidget = context.findAncestorWidgetOfExactType<BindingWidget<T>>();
 
     if (bindingWidget == null) {
       throw ArgumentError('No BindingWidgets found for the specified type.');
@@ -92,10 +90,10 @@ class BindingWidget<T extends BindableBase> extends StatefulWidget {
 /// A state object for use internally by fmvvm for BindingWidgets.
 class _BindingWidgetState<T> extends State<BindingWidget> {
   final List<Binding> _sourceBindings;
-  final List<_BindingListener> _bindingListeners = List<_BindingListener>();
+  final List<_BindingListener> _bindingListeners = <_BindingListener>[];
 
   _BindingWidgetState(this._sourceBindings) {
-    var addedListeners = List<BindableBase>();
+    var addedListeners = <BindableBase>[];
 
     _sourceBindings.forEach((b) {
       _createListener(b, addedListeners);

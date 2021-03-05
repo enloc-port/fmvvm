@@ -4,7 +4,7 @@ part of fmvvm;
 class ComponentResolver {
   ComponentResolver() {
     if (_dependencyRegistrations == null) {
-      _dependencyRegistrations = List<_DependencyRegistration>();
+      _dependencyRegistrations = <_DependencyRegistration>[];
     }
   }
 
@@ -71,7 +71,7 @@ class ComponentResolver {
 
   /// Removes all registrations from the dependency injection container.
   void resetRegistrations() {
-    _dependencyRegistrations = List<_DependencyRegistration>();
+    _dependencyRegistrations = <_DependencyRegistration>[];
   }
 }
 

@@ -3,7 +3,7 @@ import 'package:fmvvm/bindings/bindings.dart';
 
 void main() {
   test('Create NotificationList from List', () {
-    var sourceList = List<_TestClass>();
+    var sourceList = <_TestClass>[];
 
     var class1 = _TestClass();
     class1.id = 1;
@@ -35,7 +35,7 @@ void main() {
   });
 
   test('Create NotificationList filled of list', () {
-    var sourceList = List<_TestClass>();
+    var sourceList = <_TestClass>[];
 
     var class1 = _TestClass();
     class1.id = 1;

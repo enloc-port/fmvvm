@@ -9,8 +9,8 @@ part of fmvvm;
 /// send information of interest without being aware of what other parts of the system may use
 /// that information.
 class FmvvmMessageService extends MessageService {
-  List<Subscription> _subscriptions = List<Subscription>();
-  List<_Messenger> _messengers = List<_Messenger>();
+  List<Subscription> _subscriptions = <Subscription>[];
+  List<_Messenger> _messengers = <_Messenger>[];
 
   /// Publishes a message to be received by any subscribers.
   ///
@@ -76,8 +76,8 @@ class FmvvmMessageService extends MessageService {
       m.close();
     });
 
-    _subscriptions = List<Subscription>();
-    _messengers = List<_Messenger>();
+    _subscriptions = <Subscription>[];
+    _messengers = <_Messenger>[];
   }
 }
 

@@ -113,7 +113,7 @@ class _HomePageViewState extends FmvvmState<_HomePageView, _HomePageViewModel> {
                   controller.selection = new TextSelection.collapsed(
                       offset: controller.text.length);
                   return TextField(
-                    style: Theme.of(context).textTheme.display1,
+                    style: Theme.of(context).textTheme.headline4,
                     controller: controller,
                     onChanged: BindingWidget.of<_HomePageViewModel>(bc)
                         .getOnChanged('counter'),
@@ -133,7 +133,7 @@ class _HomePageViewState extends FmvvmState<_HomePageView, _HomePageViewModel> {
                   controller2.selection = new TextSelection.collapsed(
                       offset: controllerText.length);
                   return TextField(
-                    style: Theme.of(context).textTheme.display1,
+                    style: Theme.of(context).textTheme.headline4,
                     controller: controller2,
                     onChanged: BindingWidget.of<_HomePageViewModel>(bc)
                         .getOnChanged('counter'),
@@ -167,14 +167,14 @@ class _HomePageViewState extends FmvvmState<_HomePageView, _HomePageViewModel> {
                     ),
                   ),
             ),
-            FlatButton(
+            TextButton(
                 child: Text(
                   'Go to Count and add 1',
                 ),
                 onPressed: () {
                   bindableBase.viewValueAddOne.execute();
                 }),
-            FlatButton(
+            TextButton(
                 child: Text(
                   'Go to Read/Write List',
                 ),
