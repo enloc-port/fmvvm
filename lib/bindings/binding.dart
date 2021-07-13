@@ -1,3 +1,5 @@
+//@dart=2.9
+
 part of fmvvm.bindings;
 
 /// Used for a binding between a widget and a object that implements BindableBase.

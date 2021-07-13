@@ -1,3 +1,5 @@
+//@dart=2.9
+
 part of fmvvm;
 
 /// Bootstraping class for the fmvvm framework.

@@ -1,3 +1,5 @@
+//@dart=2.9
+
 part of fmvvm.bindings;
 
 /// Contains the data backing a PropertyInfo for an instance of a class.

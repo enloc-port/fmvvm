@@ -1,3 +1,5 @@
+//@dart=2.9
+
 part of fmvvm.bindings;
 
 /// Manages the backing field data for an instance of the BindableBase class.

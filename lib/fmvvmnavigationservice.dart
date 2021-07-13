@@ -1,3 +1,5 @@
+//@dart=2.9
+
 part of fmvvm;
 
 /// Default implementation of the fmvvm NavigationService interface.

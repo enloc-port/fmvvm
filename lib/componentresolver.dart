@@ -1,3 +1,5 @@
+//@dart=2.9
+
 part of fmvvm;
 
 /// The default fmvvm dependency injection/IoC implementation.

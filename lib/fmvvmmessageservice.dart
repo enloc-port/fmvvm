@@ -1,3 +1,5 @@
+//@dart=2.9
+
 part of fmvvm;
 
 /// Supports the publish/subscribe pattern.

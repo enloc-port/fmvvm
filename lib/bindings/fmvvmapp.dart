@@ -1,3 +1,5 @@
+//@dart=2.9
+
 part of fmvvm.bindings;
 
 /// Class to use for the main application in an fmvvm app.

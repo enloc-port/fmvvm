@@ -1,3 +1,5 @@
+//@dart=2.9
+
 part of fmvvm.bindings;
 
 /// Used by ViewModels and other BindableBase objects to execute a command/function.

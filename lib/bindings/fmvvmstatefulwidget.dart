@@ -1,3 +1,5 @@
+//@dart=2.9
+
 part of fmvvm.bindings;
 
 /// Class to expend for all StatefulWidgets that plan to use databinding and be bound to a viewmodel.

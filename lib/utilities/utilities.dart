@@ -1,3 +1,5 @@
+//@dart=2.9
+
 library fmvvm.utilities;
 
 /// Utility methods used by the fmvvm framework.
