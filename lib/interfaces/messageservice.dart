@@ -1,5 +1,3 @@
-//@dart=2.9
-
 part of fmvvm.interfaces;
 
 /// Supports the publish/subscribe pattern.
@@ -30,13 +28,12 @@ abstract class MessageService {
 
 /// A subscription to be used with the MessageService.
 class Subscription {
-  Subscription(String name, Function(Object parameter) messageHandler) {
-    _name = name;
-    _messageHandler = messageHandler;
-  }
+  const Subscription(String name, Function(Object parameter) messageHandler)
+      : _name = name,
+        _messageHandler = messageHandler;
 
-  String _name;
-  Function(Object parameter) _messageHandler;
+  final String _name;
+  final Function(Object parameter) _messageHandler;
 
   /// The name of the subscription to listen to messages for.
   ///
@@ -50,13 +47,12 @@ class Subscription {
 
 /// A message to send to the subscription service.
 class Message {
-  Message(String name, Object parameter) {
-    _name = name;
-    _parameter = parameter;
-  }
+  const Message(String name, Object parameter)
+      : _name = name,
+        _parameter = parameter;
 
-  String _name;
-  Object _parameter;
+  final String _name;
+  final Object _parameter;
 
   /// The name of the messager to send.
   ///

@@ -1,5 +1,3 @@
-//@dart=2.9
-
 library fmvvm.utilities;
 
 /// Utility methods used by the fmvvm framework.
@@ -10,5 +8,5 @@ class Utilities {
 
 /// Contains static variables for items used by fmvvm.
 class Constants {
-  static String newBuildContext = "NewBuildContext";
+  static const String newBuildContext = "NewBuildContext";
 }
