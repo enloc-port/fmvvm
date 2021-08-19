@@ -1,5 +1,3 @@
-//@dart=2.9
-
 part of fmvvm.bindings;
 
 /// Interface for Geting information about a view or route based on a view model type.

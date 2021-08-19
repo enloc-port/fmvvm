@@ -1,5 +1,3 @@
-//@dart=2.9
-
 part of fmvvm.bindings;
 
 /// Interface to be implemented by objects that retain references to view models.

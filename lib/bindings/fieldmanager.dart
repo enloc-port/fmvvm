@@ -1,10 +1,8 @@
-//@dart=2.9
-
 part of fmvvm.bindings;
 
 /// Manages the backing field data for an instance of the BindableBase class.
 class FieldManager {
-  List<FieldData> _fieldDataList = <FieldData>[];
+  final List<FieldData> _fieldDataList = <FieldData>[];
 
   /// Get's the value for a property info on a class instance.
   Object getValue(PropertyInfo propertyInfo) {

@@ -1,5 +1,3 @@
-//@dart=2.9
-
 part of fmvvm.bindings;
 
 /// Used to define a property changed listener that sends notifications when
@@ -8,10 +6,9 @@ typedef PropertyChangedListener = void Function(String propertyName);
 
 /// Class to be extended when creating any non widget object that can be bound to.
 abstract class BindableBase extends ChangeNotifier {
-  ObserverList<PropertyChangedListener> _listeners =
-      ObserverList<PropertyChangedListener>();
+  ObserverList<PropertyChangedListener>? _listeners = ObserverList<PropertyChangedListener>();
 
-  FieldManager _fieldManager = FieldManager();
+  final FieldManager _fieldManager = FieldManager();
 
   /// Gives a new value to a property.
   @protected
@@ -33,12 +30,12 @@ abstract class BindableBase extends ChangeNotifier {
 
   /// Adds a listener that when called returns the string name of a property that has changed as a parameter.
   void addPropertyListener(PropertyChangedListener listener) {
-    _listeners.add(listener);
+    _listeners?.add(listener);
   }
 
   /// Removes a property listener
   void removePropertyListener(PropertyChangedListener listener) {
-    _listeners.remove(listener);
+    _listeners?.remove(listener);
   }
 
   /// Whether any listeners are currently registered.
@@ -58,7 +55,7 @@ abstract class BindableBase extends ChangeNotifier {
   /// so, stopping that same work.
   @override
   bool get hasListeners {
-    return _listeners.isNotEmpty || super.hasListeners;
+    return (_listeners != null && _listeners!.isNotEmpty) || super.hasListeners;
   }
 
   /// Call all the registered listeners.
@@ -80,10 +77,9 @@ abstract class BindableBase extends ChangeNotifier {
   void notifyPropertyListeners(String propertyName) {
     notifyListeners();
     if (_listeners != null) {
-      final List<PropertyChangedListener> localListeners =
-          List<PropertyChangedListener>.from(_listeners);
+      final List<PropertyChangedListener> localListeners = List<PropertyChangedListener>.from(_listeners!);
       for (var listener in localListeners) {
-        if (_listeners.contains(listener)) {
+        if (_listeners!.contains(listener)) {
           listener(propertyName);
         }
       }

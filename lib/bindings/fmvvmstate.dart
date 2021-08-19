@@ -1,5 +1,3 @@
-//@dart=2.9
-
 part of fmvvm.bindings;
 
 /// State object to be used with binding for StatefulWidgets.
@@ -38,6 +36,6 @@ abstract class FmvvmState<T extends StatefulWidget, V extends BindableBase>
           .resolveType<MessageService>()
           .publish(Message(Constants.newBuildContext, context));
     }
-    return null;
+    return Container();
   }
 }

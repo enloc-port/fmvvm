@@ -1,5 +1,3 @@
-//@dart=2.9
-
 part of fmvvm.bindings;
 
 /// Class to expend for all StatefulWidgets that plan to use databinding and be bound to a viewmodel.
@@ -9,7 +7,7 @@ abstract class FmvvmStatefulWidget<V extends BindableBase>
   ///
   /// [_bindableBase] - A reference to the BindableBase to be used.
   @mustCallSuper
-  FmvvmStatefulWidget(this._bindableBase, {Key key}) : super(key: key);
+  FmvvmStatefulWidget(this._bindableBase, {Key? key}) : super(key: key);
 
   final V _bindableBase;
 

@@ -1,5 +1,3 @@
-//@dart=2.9
-
 part of fmvvm.bindings;
 
 /// The NotificationList extends a normal list base and adds a ChangeNotifier
@@ -31,7 +29,7 @@ class NotificationList<E> extends ListBase<E> with ChangeNotifier {
     notifyListeners();
   }
 
-  bool remove(Object element) {
+  bool remove(Object? element) {
     var returnValue = super.remove(element);
     notifyListeners();
     return returnValue;
@@ -82,7 +80,7 @@ class NotificationList<E> extends ListBase<E> with ChangeNotifier {
 
   static void copyRange<T>(
       NotificationList<T> target, int at, NotificationList<T> source,
-      [int start, int end]) {
+      [int? start, int? end]) {
     List.copyRange(target, at, source);
   }
 

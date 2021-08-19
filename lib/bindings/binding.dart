@@ -1,44 +1,37 @@
-//@dart=2.9
-
 part of fmvvm.bindings;
 
 /// Used for a binding between a widget and a object that implements BindableBase.
 ///
 /// This item is usually created within a FmvvmState object.
 class Binding {
-  Binding(String key, BindableBase source, PropertyInfo sourceProperty,
-      {BindingDirection bindingDirection,
-      fmvvm_interfaces.ValueConverter valueConverter}) {
-    this.source = source;
-    _sourceProperty = sourceProperty;
+  Binding(String key, this.source, PropertyInfo sourceProperty, {BindingDirection? bindingDirection, fmvvm_interfaces.ValueConverter? valueConverter})
+      : _key = key,
+        _sourceProperty = sourceProperty,
+        _bindingDirection = bindingDirection ?? BindingDirection.TwoWay,
+        _valueConverter = valueConverter;
 
-    _bindingDirection = bindingDirection ?? BindingDirection.TwoWay;
-    _valueConverter = valueConverter;
-    _key = key;
-  }
+  final String _key;
 
-  String _key;
+  final BindingDirection? _bindingDirection;
 
-  BindingDirection _bindingDirection;
+  final PropertyInfo _sourceProperty;
 
-  PropertyInfo _sourceProperty;
-
-  fmvvm_interfaces.ValueConverter _valueConverter;
+  final fmvvm_interfaces.ValueConverter? _valueConverter;
 
   String get key => _key;
 
   /// The source bindable base object.
-  BindableBase source;
+  final BindableBase source;
 
   /// If the binding only happens once or if it is able to be bi-directional.
-  BindingDirection get bindingDirection => _bindingDirection;
+  BindingDirection? get bindingDirection => _bindingDirection;
 
   /// The propertyInfo object being bound to on the source.
   PropertyInfo get sourceProperty => _sourceProperty;
 
   /// An optional value converter to be used if the value needs to be changed when moving back and
   /// forth from the widget to the source.
-  fmvvm_interfaces.ValueConverter get valueConverter => _valueConverter;
+  fmvvm_interfaces.ValueConverter? get valueConverter => _valueConverter;
 
   Object originalValue = _OriginalValueNeverSet;
 }

@@ -1,5 +1,3 @@
-//@dart=2.9
-
 part of fmvvm.bindings;
 
 /// Class to expend for all StatelessWidgets that plan to use data in a viewmodel for display.
@@ -15,7 +13,7 @@ abstract class FmvvmStatelessWidget<V extends BindableBase>
   /// [_isNavigable] should be true if this widget will be treated like a page instead of part
   /// of a page.
   @mustCallSuper
-  FmvvmStatelessWidget(this._bindableBase, this._isNavigable, {Key key})
+  FmvvmStatelessWidget(this._bindableBase, this._isNavigable, {Key? key})
       : super(key: key) {
     if (_bindableBase is! ViewModel && _isNavigable) {
       throw ArgumentError(
@@ -40,6 +38,6 @@ abstract class FmvvmStatelessWidget<V extends BindableBase>
           .resolveType<MessageService>()
           .publish(Message(Constants.newBuildContext, context));
     }
-    return null;
+    return Container();
   }
 }
