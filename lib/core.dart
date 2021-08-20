@@ -1,13 +1,11 @@
-//@dart=2.9
-
 part of fmvvm;
 
 /// Bootstraping class for the fmvvm framework.
 class Core {
-  static ComponentResolver _componentResolver;
-  static NavigationService _navigationService;
-  static ViewLocator _viewLocator;
-  static MessageService _messageService;
+  static late final ComponentResolver _componentResolver;
+  static late final NavigationService _navigationService;
+  static late final ViewLocator _viewLocator;
+  static late final MessageService _messageService;
 
   /// Called to initialize the fmvvm framework.
   ///
@@ -15,7 +13,7 @@ class Core {
   /// usually during the app startup.
   /// The [registrations] parameter allows overrides of the devault navigation,
   /// view location and component resolution (dependency injection/Ioc) implementations.
-  static void initialize({Registrations registrations}) {
+  static void initialize({Registrations? registrations}) {
     var startRegistrations = registrations ?? Registrations();
 
     _navigationService = startRegistrations.getNavigationService();

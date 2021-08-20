@@ -1,5 +1,3 @@
-//@dart=2.9
-
 part of fmvvm;
 
 /// Supports the publish/subscribe pattern.
@@ -84,14 +82,13 @@ class FmvvmMessageService extends MessageService {
 }
 
 class _Messenger {
-  _Messenger(String name) {
-    this.name = name;
-  }
-  StreamController _streamController = StreamController.broadcast();
+  _Messenger(this.name);
 
-  String name;
+  final StreamController<Object> _streamController = StreamController.broadcast();
 
-  StreamController get streamController => _streamController;
+  final String name;
+
+  StreamController<Object> get streamController => _streamController;
 
   void close() {
     _streamController.close();

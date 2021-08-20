@@ -17,7 +17,7 @@ abstract class NavigationService {
   /// The [parameter] is a value that will be passed to the new viewmodel's
   /// init method. It is expexted that the ViewModel being navigated to will
   /// return an instance of type R when it is popped off the stack.
-  Future<R> navigateForResult<R extends Object, V extends ViewModel>(
+  Future<R?> navigateForResult<R extends Object, V extends ViewModel>(
       {Object parameter});
 
   /// Pops the current view / viewmodel off the stack and goes to the previous one.

@@ -1,5 +1,3 @@
-//@dart=2.9
-
 part of fmvvm;
 
 /// When fmvvm is instatiated, this class is used to create fmmvm service objects.
