@@ -2,7 +2,7 @@ part of fmvvm;
 
 /// The default fmvvm dependency injection/IoC implementation.
 class ComponentResolver {
-  static List<_DependencyRegistration> _dependencyRegistrations = <_DependencyRegistration>[];
+  static final List<_DependencyRegistration> _dependencyRegistrations = <_DependencyRegistration>[];
 
   /// Resolve a type registered with the contianer specified by [targetType].
   Object? resolve(Type targetType) {
@@ -65,7 +65,7 @@ class ComponentResolver {
 
   /// Removes all registrations from the dependency injection container.
   void resetRegistrations() {
-    _dependencyRegistrations = <_DependencyRegistration>[];
+    _dependencyRegistrations.clear();
   }
 }
 

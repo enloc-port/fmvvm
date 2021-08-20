@@ -9,18 +9,14 @@ part of fmvvm;
 /// send information of interest without being aware of what other parts of the system may use
 /// that information.
 class FmvvmMessageService extends MessageService {
-  List<Subscription> _subscriptions = <Subscription>[];
-  List<_Messenger> _messengers = <_Messenger>[];
+  final List<Subscription> _subscriptions = <Subscription>[];
+  final List<_Messenger> _messengers = <_Messenger>[];
 
   /// Publishes a message to be received by any subscribers.
   ///
   /// If there are no subscripbers to the messange name, this method will do nothing.
   @override
   void publish(Message message) {
-    if (message == null) {
-      throw ArgumentError('A message must be provided.');
-    }
-
     if (_messengers.any((m) => m.name == message.name)) {
       var messenger = _messengers.singleWhere((m) => m.name == message.name);
       messenger.streamController.add(message.parameter);
@@ -30,10 +26,6 @@ class FmvvmMessageService extends MessageService {
   /// Adds a subscription to receive notifications when events occur.
   @override
   void subscribe(Subscription subscription) {
-    if (subscription == null) {
-      throw ArgumentError('A subscription must be provided.');
-    }
-
     _subscriptions.add(subscription);
     if (!_messengers.any((m) => m.name == subscription.name)) {
       _messengers.add(_Messenger(subscription.name));
@@ -54,10 +46,6 @@ class FmvvmMessageService extends MessageService {
   /// If the subscription does not exist this method does nothing.
   @override
   void unsubscribe(Subscription subscription) {
-    if (subscription == null) {
-      throw ArgumentError('A subscription must be provided.');
-    }
-
     _subscriptions.remove(subscription);
 
     if (!_subscriptions.any((s) => s.name == subscription.name)) {
@@ -76,8 +64,8 @@ class FmvvmMessageService extends MessageService {
       m.close();
     });
 
-    _subscriptions = <Subscription>[];
-    _messengers = <_Messenger>[];
+    _subscriptions.clear();
+    _messengers.clear();
   }
 }
 
