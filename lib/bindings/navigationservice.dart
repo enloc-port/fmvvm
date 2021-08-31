@@ -42,7 +42,7 @@ abstract class NavigationService {
   /// init method.
   /// This method is usefule for creating a view model to pass to an apps
   /// starting widget.
-  ViewModel createViewModel<T extends ViewModel>(Object parameter);
+  ViewModel createViewModel<T extends ViewModel>(Object? parameter);
 
   /// Any initiliazation needed to be done by the messenger service.
   ///
