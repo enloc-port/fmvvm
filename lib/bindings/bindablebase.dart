@@ -12,7 +12,7 @@ abstract class BindableBase extends ChangeNotifier {
 
   /// Gives a new value to a property.
   @protected
-  void setValue(PropertyInfo propertyInfo, Object value) {
+  void setValue(PropertyInfo propertyInfo, dynamic value) {
     if (_fieldManager.getValue(propertyInfo) != value) {
       _fieldManager.setValue(propertyInfo, value);
 
@@ -24,7 +24,7 @@ abstract class BindableBase extends ChangeNotifier {
   ///
   /// If the property has not been set, the default value will be returned.
   @protected
-  Object getValue(PropertyInfo propertyInfo) {
+  dynamic getValue(PropertyInfo propertyInfo) {
     return _fieldManager.getValue(propertyInfo);
   }
 
