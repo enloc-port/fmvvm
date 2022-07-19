@@ -5,13 +5,13 @@ class FieldManager {
   final List<FieldData> _fieldDataList = <FieldData>[];
 
   /// Get's the value for a property info on a class instance.
-  Object getValue(PropertyInfo propertyInfo) {
+  dynamic getValue(PropertyInfo propertyInfo) {
     FieldData fieldData = _getFieldData(propertyInfo);
     return fieldData.value;
   }
 
   /// Set's a new value for a property info on a class instance.
-  void setValue(PropertyInfo propertyInfo, Object value) {
+  void setValue(PropertyInfo propertyInfo, dynamic value) {
     FieldData fieldData = _getFieldData(propertyInfo);
     fieldData.value = value;
   }
